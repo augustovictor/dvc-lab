@@ -1,0 +1,5 @@
+stages:
+  train:
+    cmd: python src/train.py data/features model.pkl
+    deps:
+    - train.py
