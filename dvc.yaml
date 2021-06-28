@@ -1,0 +1,18 @@
+stages:
+  prepare:
+    cmd: python pipeline/prepare.py summary.json
+    deps:
+      - data/data.xml
+      - data/shapefiles/MG_Municipios_2020.shp
+      - data/shapefiles/MG_Municipios_2020.shx
+      - data/MOCK_DATA.csv
+    params:
+      - prepare.initial_letter_to_filter_for
+#    outs:
+#      - summary.json
+    metrics:
+      - summary.json:
+          cache: false
+    #    plots:
+#      - prc.json:
+#          cache: false
