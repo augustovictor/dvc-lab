@@ -1,0 +1,24 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python pipeline/prepare.py summary.json
+    deps:
+    - path: data/MOCK_DATA.csv
+      md5: a36291faf2ac89715806eb51e0e983ed
+      size: 65386
+    - path: data/data.xml
+      md5: a304afb96060aad90176268345e10355
+      size: 37891850
+    - path: data/shapefiles/MG_Municipios_2020.shp
+      md5: fc3d46f644cd9b36342d337c282f9c47
+      size: 45369644
+    - path: data/shapefiles/MG_Municipios_2020.shx
+      md5: af2c49c20a98bb27e9b144027826d47e
+      size: 6924
+    params:
+      params.yaml:
+        prepare.initial_letter_to_filter_for: A
+    outs:
+    - path: summary.json
+      md5: 42cf300455c570a3d5aeef719ce479d2
+      size: 37
