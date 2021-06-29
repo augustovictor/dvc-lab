@@ -17,8 +17,8 @@ stages:
       size: 6924
     params:
       params.yaml:
-        prepare.initial_letter_to_filter_for: H
+        prepare.initial_letter_to_filter_for: Z
     outs:
     - path: summary.json
-      md5: b694cb470c441dc3d21a91cdbf178a12
+      md5: 0b66a2ec4ed59b83d02b79750889c7f3
       size: 37

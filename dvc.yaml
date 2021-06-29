@@ -1,6 +1,6 @@
 stages:
   prepare:
-    cmd: python pipeline/prepare.py summary.json
+    cmd: python pipeline/prepare.py
     deps:
       - data/data.xml
       - data/shapefiles/MG_Municipios_2020.shp
