@@ -6,7 +6,7 @@ authors = ["augustovictor <victor.costa@loft.com.br>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-dvc = "^2.3.0"
+dvc = { "version"= "^2.3.0", "extras"=["gdrive"] }
 scikit-learn = "^0.24.2"
 pandas = "^1.2.4"
 gdown = "^3.13.0"
