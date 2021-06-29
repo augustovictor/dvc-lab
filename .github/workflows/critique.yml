@@ -25,8 +25,8 @@ jobs:
           GOOGLE_DRIVE_CLIENT_ID: ${{ secrets.GOOGLE_DRIVE_CLIENT_ID }}
           GOOGLE_DRIVE_CLIENT_SECRET: ${{ secrets.GOOGLE_DRIVE_CLIENT_SECRET }}
         run: |
-          poetry run dvc remote modify storage gdrive_client_id '$(GOOGLE_DRIVE_CLIENT_ID)'
-          poetry run dvc remote modify storage gdrive_client_secret '$(GOOGLE_DRIVE_CLIENT_SECRET)'
+          poetry run dvc remote modify storage gdrive_client_id '$GOOGLE_DRIVE_CLIENT_ID'
+          poetry run dvc remote modify storage gdrive_client_secret '$GOOGLE_DRIVE_CLIENT_SECRET'
       - name: Pull dvc dependencies
         run: |
           poetry run dvc pull
