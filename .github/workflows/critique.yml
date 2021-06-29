@@ -17,10 +17,15 @@ jobs:
       - uses: iterative/setup-cml@v1
       - name: Install Poetry
         uses: snok/install-poetry@v1.1.6
+      - name: Install dependencies
+        run: |
+          poetry install
+      - name: Pull dvc dependencies
+        run: |
+          poetry run dvc pull
       - name: Train model
         run: |
           # Your ML workflow goes here
-          poetry install
           poetry run dvc repro
       - name: Write CML report
         env:
