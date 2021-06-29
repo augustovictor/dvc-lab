@@ -1,14 +1,11 @@
-import json
-
 import pandas as pd
 import yaml
+
+from utils.utils import save_metrics
 
 data = pd.read_csv("./data/MOCK_DATA.csv")
 
 print(data.info)
-
-SUMMARY_FILE_NAME = "summary.json"
-
 
 with open("params.yaml", 'r') as fd:
     params = yaml.safe_load(fd)
@@ -22,5 +19,4 @@ result = data[data['first_name'].str.startswith('H')]
 
 print(result.head())
 
-with open(SUMMARY_FILE_NAME, 'w') as f:
-    json.dump({'initial_letter_to_filter_for': chosen_letter}, f)
+save_metrics({'initial_letter_to_filter_for': chosen_letter})
